@@ -30,10 +30,16 @@ shinyUI(pageWithSidebar(
         tags$h2("Purpose"),
         tags$p("This app implements an ", tags$a(href="http://fivethirtyeight.com/features/a-formula-for-decoding-health-news/",
                                                   target="_blank",
-                                                "algorithm proposed by Jeff Leek"), " on the ",                                           tags$a(href="http://fivethirtyeight.com",
+                                                "algorithm proposed by Jeff Leek"), " on the ",
+                                          tags$a(href="http://fivethirtyeight.com",
                                                   target="_blank",
                                                   "fivethirtyeight.com website"),
-                "describing how to use Bayesian reasoning to decide how credible health news is, based on some simple criteria."), 
+                "describing how to use Bayesian reasoning to decide how credible health news is, based on some simple criteria.",
+                "Source code can be found on ",
+                    tags$a(href="https://github.com/patrickbarta/LeekScore",
+                    target="_blank",
+                      "github.")
+               ), 
         tags$h2("Instructions"),
         tags$p("First, find an article with health news that interests you, and read the conclusion.\
                In the slider to the left marked \"Prior Probability\", indicate your prior probability that you believe\
