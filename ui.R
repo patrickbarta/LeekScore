@@ -37,7 +37,7 @@ shinyUI(pageWithSidebar(
         tags$h2("Instructions"),
         tags$p("First, find an article with health news that interests you, and read the conclusion.\
                In the slider to the left marked \"Prior Probability\", indicate your prior probability that you believe\
-               the conclusion described in the article are true. After reading the article,\
+               the conclusion described in the article is true. After reading the article,\
                check the boxes on the left which are true for your article. Under Output, read your posterior probability\
                that the findings in the article are actually true."), 
         tags$h2("Inputs"),
