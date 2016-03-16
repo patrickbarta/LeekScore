@@ -1,4 +1,11 @@
 posterior <- function(input) {
+    # handle special cases
+    if (input$prior == 0.) {
+      return(0)
+    }
+    if (input$prior == 1.) {
+      return(1.)
+    }
     # compute prior odds
     priorOdds = input$prior/(1-input$prior)
     

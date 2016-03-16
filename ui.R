@@ -4,8 +4,8 @@ shinyUI(pageWithSidebar(
     sidebarPanel(
       sliderInput("prior", 
                     "Prior probability:", 
-                    min = 0.001,
-                    max = 0.999, 
+                    min = 0.,
+                    max = 1., 
                     value = .5),
       checkboxInput(inputId = "humans",
                     label = strong("Was this a clinical study in humans?"),
@@ -41,11 +41,11 @@ shinyUI(pageWithSidebar(
                       "github.")
                ), 
         tags$h2("Instructions"),
-        tags$p("First, find an article with health news that interests you, and read the conclusion.\
-               In the slider to the left marked \"Prior Probability\", indicate your prior probability that you believe\
-               the conclusion described in the article is true. After reading the article,\
-               check the boxes on the left which are true for your article. Under Output, read your posterior probability\
-               that the findings in the article are actually true."), 
+        tags$p("First, find a news article with health information that interests you, and read the conclusion.\
+               On the slider to the left marked \"Prior Probability\", indicate your prior probability that you believe\
+               the conclusion described in the news article is true. After reading the journal article referenced by the news article,\
+               check the boxes on the left which are true for the journal article. Under Output, read your posterior probability\
+               that the findings in the news article are actually true."), 
         tags$h2("Inputs"),
         verbatimTextOutput("prior"),
         verbatimTextOutput("humans"),
