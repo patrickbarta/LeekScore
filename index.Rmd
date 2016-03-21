@@ -1,0 +1,107 @@
+---
+title       : Decoding Health News
+subtitle    : Using the Leek score to help
+author      : Patrick Barta, patrickbarta <at> patrickbarta.com
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [bootstrap, mathjax]            # {mathjax, quiz, bootstrap}
+ext_widgets : {rCharts: libraries/nvd3}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## The problem
+
+Every day, we are all inundated by various health claims in the media:
+
+* Alzheimer's Patients Can Store Memories, Study Suggests
+* 1 in 6 Seniors Takes Dangerous Combos of Meds, Supplements: Study
+* Michelangelo Likely Had Arthritis, Medical Experts Say
+
+We know that media sometimes sensationalizes things.
+
+*How about a quick and dirty way to evaluate these health claims?*
+
+--- .class #id 
+
+## A Bayesian solution: The Leek score
+
+* In 2014, Jeff Leek proposed a checklist of items to look for, which,
+if positive, suggested that we should believe the study. (  )
+* However, just because a study has some positive features, that doesn't
+mean that we should believe it uncritically.
+* The approach is purely Bayesian: we start out with a prior probability
+that we believe the study, then adjust that prior by using subjective
+likelihood ratios which increase the prior odds when the checklist items are
+true, and which decrease them when the items are false.
+* Checklist items are things like whether the study was a randomized control trial.
+
+--- .class #id
+
+## Posterior vs. prior by number of positive criteria
+```{r, echo=FALSE}
+library(tidyr)
+library(rCharts)
+post <- function(prior,numPositive) {
+  # handle special cases
+  if ((prior == 0.) || (prior == 1.)) {
+   return(prior) 
+  }
+  
+  priorOdds <- prior/(1-prior) 
+  lrt <- 2^(2*numPositive - 6)
+  posteriorOdds <- priorOdds * lrt
+  posterior <- posteriorOdds/(1+posteriorOdds)
+  return(posterior)
+}
+
+# set of probabilities
+p <- 0:100/100
+
+df <- data.frame(prior=p, check.names=FALSE)
+df$"0" <- sapply(df$prior,function(x) post(x,0))
+df$"1" <- sapply(df$prior,function(x) post(x,1))
+df$"2" <- sapply(df$prior,function(x) post(x,2))
+df$"3" <- sapply(df$prior,function(x) post(x,3))
+df$"4" <- sapply(df$prior,function(x) post(x,4))
+df$"5" <- sapply(df$prior,function(x) post(x,5))
+df$"6" <- sapply(df$prior,function(x) post(x,6))
+
+# restack for lattice-style graphics
+df <- df %>% gather(positive, posterior, 2:8)
+```
+
+In the chart below, the colored number labels refer to the number of checklist items which are true.
+
+```{r nvd3plot3, results = 'asis', comment = NA, message = F, echo = F}
+# chart
+n1 <- nPlot(posterior ~ prior, data = df, type = 'lineChart', group="positive")
+n1$chart(useInteractiveGuideline=TRUE)
+n1$xAxis(axisLabel = "Prior probability")
+n1$yAxis(axisLabel = "Posterior probability", width=40)
+n1$show('inline', cdn=TRUE)
+```
+
+---
+
+## More information?
+
+Leek's original article is at:
+
+* http://fivethirtyeight.com/features/a-formula-for-decoding-health-news/
+
+This article also contains more detail of Leek's Bayesian approach.
+
+There is an interactive demo at:
+
+* https://patrickbarta.shinyapps.io/LeekScore/
+
+Code for app is on GitHub:
+
+* https://github.com/patrickbarta/LeekScore
+
+This presentation is at:
+
+* http://rpubs.com/patrickbarta/LeekScore
