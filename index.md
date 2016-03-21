@@ -3653,6 +3653,7 @@ In the chart below, the colored number labels refer to the number of checklist i
 </script>
 
 Notice how really improbable things stay improbable, and really probable things stay probable. "Extraordinary claims require extraordinary proof."
+
 ---
 
 ## More information?
