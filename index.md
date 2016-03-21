@@ -3675,3 +3675,5 @@ Code for app is on GitHub:
 This presentation is at:
 
 * http://patrickbarta.github.io/LeekScore
+
+Source for presentation is on the gh-branch of the app source repo.
