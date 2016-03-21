@@ -46,21 +46,21 @@ true, and which decrease them when the items are false.
 In the chart below, the colored number labels refer to the number of checklist items which are true.
 
 
-<div id = 'chart5e4471b9bb0c' class = 'rChart nvd3'></div>
+<div id = 'chart63f95e559b4c' class = 'rChart nvd3'></div>
 <script type='text/javascript'>
  $(document).ready(function(){
-      drawchart5e4471b9bb0c()
+      drawchart63f95e559b4c()
     });
-    function drawchart5e4471b9bb0c(){  
+    function drawchart63f95e559b4c(){  
       var opts = {
- "dom": "chart5e4471b9bb0c",
+ "dom": "chart63f95e559b4c",
 "width":    800,
 "height":    400,
 "x": "prior",
 "y": "posterior",
 "type": "lineChart",
 "group": "positive",
-"id": "chart5e4471b9bb0c" 
+"id": "chart63f95e559b4c" 
 },
         data = [
  {
@@ -3652,6 +3652,7 @@ In the chart below, the colored number labels refer to the number of checklist i
     };
 </script>
 
+Notice how really improbable things stay improbable, and really probable things stay probable. "Extraordinary claims require extraordinary proof."
 ---
 
 ## More information?
@@ -3672,4 +3673,4 @@ Code for app is on GitHub:
 
 This presentation is at:
 
-* http://rpubs.com/patrickbarta/LeekScore
+* http://patrickbarta.github.io/LeekScore

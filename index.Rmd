@@ -81,9 +81,10 @@ n1 <- nPlot(posterior ~ prior, data = df, type = 'lineChart', group="positive")
 n1$chart(useInteractiveGuideline=TRUE)
 n1$xAxis(axisLabel = "Prior probability")
 n1$yAxis(axisLabel = "Posterior probability", width=40)
-n1$show('inline', cdn=TRUE)
+n1$show('inline')
 ```
 
+Notice how really improbable things stay improbable, and really probable things stay probable. "Extraordinary claims require extraordinary proof."
 ---
 
 ## More information?
@@ -104,4 +105,4 @@ Code for app is on GitHub:
 
 This presentation is at:
 
-* http://rpubs.com/patrickbarta/LeekScore
+* http://patrickbarta.github.io/LeekScore
