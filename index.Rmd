@@ -29,7 +29,7 @@ We know that media sometimes sensationalizes things.
 ## A Bayesian solution: The Leek score
 
 * In 2014, Jeff Leek proposed a checklist of items to look for, which,
-if positive, suggested that we should believe the study. (  )
+if positive, suggested that we should believe the study.
 * However, just because a study has some positive features, that doesn't
 mean that we should believe it uncritically.
 * The approach is purely Bayesian: we start out with a prior probability
