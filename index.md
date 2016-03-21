@@ -46,21 +46,21 @@ true, and which decrease them when the items are false.
 In the chart below, the colored number labels refer to the number of checklist items which are true.
 
 
-<div id = 'chart63f95e559b4c' class = 'rChart nvd3'></div>
+<div id = 'chart1d4b7212d0e7' class = 'rChart nvd3'></div>
 <script type='text/javascript'>
  $(document).ready(function(){
-      drawchart63f95e559b4c()
+      drawchart1d4b7212d0e7()
     });
-    function drawchart63f95e559b4c(){  
+    function drawchart1d4b7212d0e7(){  
       var opts = {
- "dom": "chart63f95e559b4c",
+ "dom": "chart1d4b7212d0e7",
 "width":    800,
 "height":    400,
 "x": "prior",
 "y": "posterior",
 "type": "lineChart",
 "group": "positive",
-"id": "chart63f95e559b4c" 
+"id": "chart1d4b7212d0e7" 
 },
         data = [
  {
@@ -3676,4 +3676,6 @@ This presentation is at:
 
 * http://patrickbarta.github.io/LeekScore
 
-Source for presentation is on the gh-branch of the app source repo.
+Source for presentation is at:
+
+* http://patrickbarta.github.io/LeekScorePitch.
