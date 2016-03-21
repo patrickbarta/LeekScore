@@ -1,22 +1,7 @@
-Leek's original article is at:
+# LeekScorePitch
 
-* http://fivethirtyeight.com/features/a-formula-for-decoding-health-news/
+The source for presentation at:
 
-This article also contains more detail of Leek's Bayesian approach.
+http://patrickbarta.github.io/LeekScore 
 
-There is an interactive demo at:
-
-* https://patrickbarta.shinyapps.io/LeekScore/
-
-Code for app is on GitHub:
-
-* https://github.com/patrickbarta/LeekScore
-
-This presentation is at:
-
-* http://patrickbarta.github.io/LeekScore
-
-Source for presentation is at:
-
-* http://patrickbarta.github.io/LeekScorePitch.
-
+(A copy is on the gh-branch of https://github.com/patrickbarta/LeekScore .)

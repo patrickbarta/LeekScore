@@ -110,4 +110,4 @@ This presentation is at:
 
 Source for presentation is at:
 
-* http://patrickbarta.github.io/LeekScorePitch.
+* https://github.com/patrickbarta/LeekScorePitch .
